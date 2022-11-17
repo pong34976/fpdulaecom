@@ -9,7 +9,7 @@
    $message = $arrayJson['events'][0]['message']['text'];
    //รับ id ของผู้ใช้
    $idu = $arrayJson['events'][0]['source']['userId'];
- $id = "U7ac026abcd6b6fff17e0a73ff6f4b70d";
+ $id = "bd9bd64d3965bf17a74f87ffa168e4b0";
    #ตัวอย่าง Message Type "Text + Sticker"
 
 
