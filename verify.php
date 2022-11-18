@@ -23,9 +23,20 @@
   //     $arrayPostData['messages'][1]['stickerId'] = "34"; */
   //     pushMsg($arrayHeader,$arrayPostData);
   //  }
- 
-
-   switch ($message) {
+  $messages = $message;
+if(strpos($message,"ดี"))
+{
+  $messages = 'ดี';
+}
+if(strpos($message,"ถาม"))
+{
+  $messages = 'ถาม';
+}
+if(strpos($message,"ปรึกษา"))
+{
+  $messages = 'ถาม';
+}
+   switch ($messages) {
     case 'test':
       $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
@@ -36,7 +47,7 @@
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-       case strpos($message,"ดี"):
+       case "ดี":
       $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
       $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
@@ -46,26 +57,16 @@
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-      case strpos($message,"ถาม"):
+      case "ถาม":
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
+        $arrayPostData['messages'][0]['text'] = " สงสัยอะไรสอบถามมาได้เลยครับ" ;
         /*$arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "2";
         $arrayPostData['messages'][1]['stickerId'] = "34"; */
         pushMsg($arrayHeader,$arrayPostData);
   
         break;
-        case strpos($message,"ปรึกษา"):
-          $arrayPostData['to'] = $idu;
-          $arrayPostData['messages'][0]['type'] = "text";
-          $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
-          /*$arrayPostData['messages'][1]['type'] = "sticker";
-          $arrayPostData['messages'][1]['packageId'] = "2";
-          $arrayPostData['messages'][1]['stickerId'] = "34"; */
-          pushMsg($arrayHeader,$arrayPostData);
-    
-          break;
     default:
     
     $arrayPostData['to'] = $idu;
