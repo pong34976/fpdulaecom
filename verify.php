@@ -23,6 +23,8 @@
   //     $arrayPostData['messages'][1]['stickerId'] = "34"; */
   //     pushMsg($arrayHeader,$arrayPostData);
   //  }
+ 
+
    switch ($message) {
     case 'test':
       $arrayPostData['to'] = $idu;
@@ -34,9 +36,26 @@
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-    
+      case 'สวัดดี':
+        $arrayPostData['to'] = $idu;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดี สอบถามได้เลยครับ" ;
+        /*$arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "2";
+        $arrayPostData['messages'][1]['stickerId'] = "34"; */
+        pushMsg($arrayHeader,$arrayPostData);
+  
+        break;
     default:
-      # code...
+    
+    $arrayPostData['to'] = $idu;
+    $arrayPostData['messages'][0]['type'] = "text";
+    $arrayPostData['messages'][0]['text'] = "สวัสดี ขอขอบคุณที่ติดต่อเรา เราได้รับข้อความของคุณแล้วและรู้สึกยินดีที่คุณติดต่อมา ". $idu;
+    /*$arrayPostData['messages'][1]['type'] = "sticker";
+    $arrayPostData['messages'][1]['packageId'] = "2";
+    $arrayPostData['messages'][1]['stickerId'] = "34"; */
+    pushMsg($arrayHeader,$arrayPostData);
+
       break;
    }
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
