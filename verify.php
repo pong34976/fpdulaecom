@@ -25,67 +25,60 @@
   //  }
  
 
-  //  switch ($message) {
-  //   case 'test':
-  //     $arrayPostData['to'] = $idu;
-  //     $arrayPostData['messages'][0]['type'] = "text";
-  //     $arrayPostData['messages'][0]['text'] = " -- ทดสอบระบบ -- : uid :". $idu;
-  //     /*$arrayPostData['messages'][1]['type'] = "sticker";
-  //     $arrayPostData['messages'][1]['packageId'] = "2";
-  //     $arrayPostData['messages'][1]['stickerId'] = "34"; */
-  //     pushMsg($arrayHeader,$arrayPostData);
+   switch ($message) {
+    case 'test':
+      $arrayPostData['to'] = $idu;
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = " -- ทดสอบระบบ -- : uid :". $idu;
+      /*$arrayPostData['messages'][1]['type'] = "sticker";
+      $arrayPostData['messages'][1]['packageId'] = "2";
+      $arrayPostData['messages'][1]['stickerId'] = "34"; */
+      pushMsg($arrayHeader,$arrayPostData);
 
-  //     break;
-       
-  //   default:
+      break;
+       case strpos($message,"ดี"):
+      $arrayPostData['to'] = $idu;
+      $arrayPostData['messages'][0]['type'] = "text";
+      $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
+      /*$arrayPostData['messages'][1]['type'] = "sticker";
+      $arrayPostData['messages'][1]['packageId'] = "2";
+      $arrayPostData['messages'][1]['stickerId'] = "34"; */
+      pushMsg($arrayHeader,$arrayPostData);
+
+      break;
+      case strpos($message,"ถาม"):
+        $arrayPostData['to'] = $idu;
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
+        /*$arrayPostData['messages'][1]['type'] = "sticker";
+        $arrayPostData['messages'][1]['packageId'] = "2";
+        $arrayPostData['messages'][1]['stickerId'] = "34"; */
+        pushMsg($arrayHeader,$arrayPostData);
+  
+        break;
+        case strpos($message,"ปรึกษา"):
+          $arrayPostData['to'] = $idu;
+          $arrayPostData['messages'][0]['type'] = "text";
+          $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
+          /*$arrayPostData['messages'][1]['type'] = "sticker";
+          $arrayPostData['messages'][1]['packageId'] = "2";
+          $arrayPostData['messages'][1]['stickerId'] = "34"; */
+          pushMsg($arrayHeader,$arrayPostData);
     
-  //   $arrayPostData['to'] = $idu;
-  //   $arrayPostData['messages'][0]['type'] = "text";
-  //   $arrayPostData['messages'][0]['text'] = "สวัสดี ขอขอบคุณที่ติดต่อเรา เราได้รับข้อความของคุณแล้วและรู้สึกยินดีที่คุณติดต่อมา ";
-  //   /*$arrayPostData['messages'][1]['type'] = "sticker";
-  //   $arrayPostData['messages'][1]['packageId'] = "2";
-  //   $arrayPostData['messages'][1]['stickerId'] = "34"; */
-  //   pushMsg($arrayHeader,$arrayPostData);
-
-  //     break;
-  //  }
- 
-
-  if( strpos( $message, "ดี" )) {
+          break;
+    default:
     
-   
     $arrayPostData['to'] = $idu;
     $arrayPostData['messages'][0]['type'] = "text";
     $arrayPostData['messages'][0]['text'] = "สวัสดี ขอขอบคุณที่ติดต่อเรา เราได้รับข้อความของคุณแล้วและรู้สึกยินดีที่คุณติดต่อมา ";
- 
+    /*$arrayPostData['messages'][1]['type'] = "sticker";
+    $arrayPostData['messages'][1]['packageId'] = "2";
+    $arrayPostData['messages'][1]['stickerId'] = "34"; */
     pushMsg($arrayHeader,$arrayPostData);
 
-  }else if( strpos( $message, "ถาม" )) {
-    
-   
-    $arrayPostData['to'] = $idu;
-    $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "มีข้อส่งสัยอะไร ถามมาได้เลยครับ";
- 
-    pushMsg($arrayHeader,$arrayPostData);
-
-  }else if( strpos( $message, "ปรึกษา" )) {
-    
-   
-    $arrayPostData['to'] = $idu;
-    $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "มีข้อส่งสัยอะไร ถามมาได้เลยครับ";
- 
-    pushMsg($arrayHeader,$arrayPostData);
-
-  }else{
-    $arrayPostData['to'] = $idu;
-    $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "^ ^";
- 
-    pushMsg($arrayHeader,$arrayPostData);
-  }
- 
+      break;
+   }
+  
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
    $arrayPostData['messages'][0]['text'] = " ข้อความ >:" . $message ;
