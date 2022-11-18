@@ -1,4 +1,5 @@
 <?php
+
    $accessToken = "qsIHlxHZwhrj9X7npIZ8BEfF88b8L84RT/RDuksoN8zOIonvVSiLuTGZmIyXNkkgCw+dUxzV+gd10o/WMvi+iU+PVYiO6pnFZur2IB4sfBjK2Qcavaq6SFmctcGwJATU9gJdiVLy37uCsVxyLlwNNgdB04t89/1O/w1cDnyilFU=";//copy ข้อความ Channel access token ตอนที่ตั้งค่า
    $content = file_get_contents('php://input');
    $arrayJson = json_decode($content, true);
@@ -16,18 +17,19 @@
   if($message == "test"){
        $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = $message;
+      $arrayPostData['messages'][0]['text'] = "ทดสอบระบบ : ".$idu;
       /*$arrayPostData['messages'][1]['type'] = "sticker";
       $arrayPostData['messages'][1]['packageId'] = "2";
       $arrayPostData['messages'][1]['stickerId'] = "34"; */
       pushMsg($arrayHeader,$arrayPostData);
    }
      if($message == "ขอid"){
-       $arrayPostData['to'] = $idu;
-      $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = "idของคุณคือ ...";
-        $arrayPostData['messages'][1]['type'] = "text";
-      $arrayPostData['messages'][1]['text'] =  $idu;
+      //  $arrayPostData['to'] = $idu;
+      // $arrayPostData['messages'][0]['type'] = "text";
+      // $arrayPostData['messages'][0]['text'] = "idของคุณคือ ...";
+      //   $arrayPostData['messages'][1]['type'] = "text";
+      // $arrayPostData['messages'][1]['text'] =  $idu;
+
       pushMsg($arrayHeader,$arrayPostData);
    }
 

@@ -6,12 +6,12 @@ require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 $access_token = 'qsIHlxHZwhrj9X7npIZ8BEfF88b8L84RT/RDuksoN8zOIonvVSiLuTGZmIyXNkkgCw+dUxzV+gd10o/WMvi+iU+PVYiO6pnFZur2IB4sfBjK2Qcavaq6SFmctcGwJATU9gJdiVLy37uCsVxyLlwNNgdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-$content = file_get_contents('php://input');
+// $content = file_get_contents('php://input');
  
 // Parse JSON
-$events = json_decode($content, true);
+// $events = json_decode($content, true);
 // Validate parsed JSON data
-if (!is_null($events['events'])) {
+// if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
@@ -48,5 +48,5 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
-} 
+// } 
 echo  "ss \n ss2";
