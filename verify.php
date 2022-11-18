@@ -30,7 +30,7 @@
       //   $arrayPostData['messages'][1]['type'] = "text";
       // $arrayPostData['messages'][1]['text'] =  $idu;
 
-      pushMsg($arrayHeader,$arrayPostData);
+      // pushMsg($arrayHeader,$arrayPostData);
    }
 
    function pushMsg($arrayHeader,$arrayPostData){
