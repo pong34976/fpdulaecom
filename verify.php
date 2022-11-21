@@ -24,15 +24,15 @@
   //     pushMsg($arrayHeader,$arrayPostData);
   //  }
   $messages = $message;
-if(strpos($message,"ดี"))
+if(strpos($message,'ดี'))
 {
   $messages = 'ดี';
 }
-if(strpos($message,"ถาม"))
+if(strpos($message,'ถาม'))
 {
   $messages = 'ถาม';
 }
-if(strpos($message,"ปรึกษา"))
+if(strpos($message,'ปรึกษา'))
 {
   $messages = 'ถาม';
 }
@@ -50,7 +50,7 @@ if(strpos($message,"ปรึกษา"))
        case "ดี":
       $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = " สวัสดีครับ" ;
+      $arrayPostData['messages'][0]['text'] = " สวัสดีครับ ผมระบบตอบโต้อัตโนมัติ " ;
       /*$arrayPostData['messages'][1]['type'] = "sticker";
       $arrayPostData['messages'][1]['packageId'] = "2";
       $arrayPostData['messages'][1]['stickerId'] = "34"; */
@@ -60,7 +60,7 @@ if(strpos($message,"ปรึกษา"))
       case "ถาม":
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = " สงสัยอะไรสอบถามมาได้เลยครับ" ;
+        $arrayPostData['messages'][0]['text'] = "ระบบตอบโต้..อัตโนมัติ  สงสัยอะไรสอบถามมาได้เลยครับ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ " ;
         /*$arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "2";
         $arrayPostData['messages'][1]['stickerId'] = "34"; */
@@ -71,7 +71,7 @@ if(strpos($message,"ปรึกษา"))
     
     $arrayPostData['to'] = $idu;
     $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "สวัสดี ขอขอบคุณที่ติดต่อเรา เราได้รับข้อความของคุณแล้วและรู้สึกยินดีที่คุณติดต่อมา ";
+    $arrayPostData['messages'][0]['text'] = "สวัสดี ขอขอบคุณที่ติดต่อเรา ตอนนี้ผู้ดูแลไม่อยู่นะครับ ผู้ที่ตอบคือระบบตอบโต้..อัตโนมัติ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ";
     /*$arrayPostData['messages'][1]['type'] = "sticker";
     $arrayPostData['messages'][1]['packageId'] = "2";
     $arrayPostData['messages'][1]['stickerId'] = "34"; */
