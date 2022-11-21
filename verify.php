@@ -24,17 +24,17 @@
   //     pushMsg($arrayHeader,$arrayPostData);
   //  }
   $messages = $message;
-if(strpos($message,'ดี'))
+if(strpos($message,"ดี"))
 {
-  $messages = 'ดี';
+  $messages = "ดี";
 }
-if(strpos($message,'ถาม'))
+if(strpos($message,"ถาม"))
 {
-  $messages = 'ถาม';
+  $messages = "ถาม";
 }
-if(strpos($message,'ปรึกษา'))
+if(strpos($message,"ปรึกษา"))
 {
-  $messages = 'ถาม';
+  $messages = "ถาม";
 }
    switch ($messages) {
     case 'test':
