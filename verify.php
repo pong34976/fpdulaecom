@@ -26,15 +26,15 @@
   $messages = $message;
 if(strpos($message,"ดี"))
 {
-  $messages = "ดี";
+  $messages = "hello";
 }
 if(strpos($message,"ถาม"))
 {
-  $messages = "ถาม";
+  $messages = "where";
 }
 if(strpos($message,"ปรึกษา"))
 {
-  $messages = "ถาม";
+  $messages = "where";
 }
    switch ($messages) {
     case 'test':
@@ -47,7 +47,7 @@ if(strpos($message,"ปรึกษา"))
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-       case "ดี":
+       case "hello":
       $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
       $arrayPostData['messages'][0]['text'] = " สวัสดีครับ ผมระบบตอบโต้อัตโนมัติ " ;
@@ -57,7 +57,7 @@ if(strpos($message,"ปรึกษา"))
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-      case "ถาม":
+      case "where":
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ระบบตอบโต้..อัตโนมัติ  สงสัยอะไรสอบถามมาได้เลยครับ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ " ;
