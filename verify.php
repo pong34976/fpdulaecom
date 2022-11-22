@@ -8,6 +8,8 @@
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
    //รับข้อความจากผู้ใช้
    $message = $arrayJson['events'][0]['message']['text'];
+ 
+ 
    $type = $arrayJson['events'][0]['message']['type'];
    //รับ id ของผู้ใช้
    $idu = $arrayJson['events'][0]['source']['userId'];
@@ -27,16 +29,17 @@
   $messages = $message;
 if(strpos($message,"ดี"))
 {
-  $messages = "hello";
+  $messages = 1;
 }
 if(strpos($message,"ถาม"))
 {
-  $messages = "where";
+  $messages = 2;
 }
-if(strpos($message,"ปรึกษา"))
+if($type=="sticker")
 {
-  $messages = "where";
+  $messages = 3;
 }
+ 
  
    switch ($messages) {
     case 'test':
@@ -49,31 +52,44 @@ if(strpos($message,"ปรึกษา"))
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-       case "hello":
+       case 1:
       $arrayPostData['to'] = $idu;
       $arrayPostData['messages'][0]['type'] = "text";
-      $arrayPostData['messages'][0]['text'] = " สวัสดีครับ ผมระบบตอบโต้อัตโนมัติ " ;
+      $arrayPostData['messages'][0]['text'] = " สวัสดีครับ ผมระบบตอบโต้อัตโนมัติ ทิ้งข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาไว้ได้เลยครับ " ;
+      $arrayPostData['messages'][1]['type'] = "text";
+      $arrayPostData['messages'][1]['text'] ="   ตัวอย่าง ยี่ห้อ HD รุ่น E2041 อาการ เปิดไม่ติด";
       /*$arrayPostData['messages'][1]['type'] = "sticker";
       $arrayPostData['messages'][1]['packageId'] = "2";
       $arrayPostData['messages'][1]['stickerId'] = "34"; */
       pushMsg($arrayHeader,$arrayPostData);
 
       break;
-      case "where":
+      case 2:
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ระบบตอบโต้อัตโนมัติ  สงสัยอะไรสอบถามมาได้เลยครับ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ " ;
-        /*$arrayPostData['messages'][1]['type'] = "sticker";
-        $arrayPostData['messages'][1]['packageId'] = "2";
-        $arrayPostData['messages'][1]['stickerId'] = "34"; */
+        $arrayPostData['messages'][0]['text'] = "ถามมาได้เลยครับ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!!  ขอขอบคุณที่ติดต่อเรา ใส่ข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาได้เลยครับ  ";
+        $arrayPostData['messages'][1]['type'] = "text";
+        $arrayPostData['messages'][1]['text'] ="   ตัวอย่าง ยี่ห้อ HD รุ่น E2041 อาการ เปิดไม่ติด";
         pushMsg($arrayHeader,$arrayPostData);
   
         break;
+        case 3:
+          $arrayPostData['to'] = $idu;
+          // $arrayPostData['messages'][0]['type'] = "text";
+             $arrayPostData['messages'][0]['type'] = "sticker";
+   $arrayPostData['messages'][0]['packageId'] = "3179";
+   $arrayPostData['messages'][0]['stickerId'] = "1317227";  
+   $arrayPostData['messages'][1]['type'] = "text";
+          $arrayPostData['messages'][1]['text'] = "ผมระบบตอบโต้อัตโนมัติ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!! สงสัยอะไรตรงไหนไหมครับ??? ";
+        
+          pushMsg($arrayHeader,$arrayPostData);
+    
+          break;
     default:
     
     $arrayPostData['to'] = $idu;
     $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "สวัสดีครับ  ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!!  ขอขอบคุณที่ติดต่อเรา ใส่ข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาได้เลยครับ  ";
+    $arrayPostData['messages'][0]['text'] = "ผมระบบตอบโต้อัตโนมัติ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!!  ขอขอบคุณที่ติดต่อเรา ใส่ข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาได้เลยครับ  ";
     $arrayPostData['messages'][1]['type'] = "text";
     $arrayPostData['messages'][1]['text'] ="   ตัวอย่าง ยี่ห้อ HD รุ่น E2041 อาการ เปิดไม่ติด";
     /*$arrayPostData['messages'][1]['type'] = "sticker";
@@ -88,8 +104,8 @@ if(strpos($message,"ปรึกษา"))
    $arrayPostData['messages'][0]['type'] = "text";
    $arrayPostData['messages'][0]['text'] = $content;
    /*$arrayPostData['messages'][1]['type'] = "sticker";
-   $arrayPostData['messages'][1]['packageId'] = "2";
-   $arrayPostData['messages'][1]['stickerId'] = "34"; */
+   $arrayPostData['messages'][1]['packageId'] = "3179";
+   $arrayPostData['messages'][1]['stickerId'] = "1317227"; */
    pushMsg($arrayHeader,$arrayPostData);
  
 
