@@ -37,7 +37,7 @@ if(strpos($message,"ปรึกษา"))
 {
   $messages = "where";
 }
- if($type=="text"){
+ 
    switch ($messages) {
     case 'test':
       $arrayPostData['to'] = $idu;
@@ -83,18 +83,14 @@ if(strpos($message,"ปรึกษา"))
 
       break;
    }
-  }else{
-    
-     
-  }
+
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = $arrayJson;
+   $arrayPostData['messages'][0]['text'] = $content;
    /*$arrayPostData['messages'][1]['type'] = "sticker";
    $arrayPostData['messages'][1]['packageId'] = "2";
    $arrayPostData['messages'][1]['stickerId'] = "34"; */
    pushMsg($arrayHeader,$arrayPostData);
-
  
 
    function pushMsg($arrayHeader,$arrayPostData){
