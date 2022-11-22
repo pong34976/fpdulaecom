@@ -89,21 +89,13 @@ if(strpos($message,"ปรึกษา"))
   }
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = $content;
+   $arrayPostData['messages'][0]['text'] = $arrayJson;
    /*$arrayPostData['messages'][1]['type'] = "sticker";
    $arrayPostData['messages'][1]['packageId'] = "2";
    $arrayPostData['messages'][1]['stickerId'] = "34"; */
    pushMsg($arrayHeader,$arrayPostData);
 
-  //    if($message == "ขอid"){
-  //     //  $arrayPostData['to'] = $idu;
-  //     // $arrayPostData['messages'][0]['type'] = "text";
-  //     // $arrayPostData['messages'][0]['text'] = "idของคุณคือ ...";
-  //     //   $arrayPostData['messages'][1]['type'] = "text";
-  //     // $arrayPostData['messages'][1]['text'] =  $idu;
-
-  //     // pushMsg($arrayHeader,$arrayPostData);
-  //  }
+ 
 
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/push";
