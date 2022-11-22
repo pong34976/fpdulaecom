@@ -83,7 +83,7 @@ if(strpos($message,"ปรึกษา"))
   
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = $arrayJson['events'][0]['message']['sticker'] ." >:" . $message ;
+   $arrayPostData['messages'][0]['text'] = $content ;
    /*$arrayPostData['messages'][1]['type'] = "sticker";
    $arrayPostData['messages'][1]['packageId'] = "2";
    $arrayPostData['messages'][1]['stickerId'] = "34"; */
