@@ -36,6 +36,7 @@ if(strpos($message,"ปรึกษา"))
 {
   $messages = "where";
 }
+ 
    switch ($messages) {
     case 'test':
       $arrayPostData['to'] = $idu;
@@ -60,7 +61,7 @@ if(strpos($message,"ปรึกษา"))
       case "where":
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ระบบตอบโต้..อัตโนมัติ  สงสัยอะไรสอบถามมาได้เลยครับ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ " ;
+        $arrayPostData['messages'][0]['text'] = "ระบบตอบโต้อัตโนมัติ  สงสัยอะไรสอบถามมาได้เลยครับ เดี๋ยวมาตอบครับให้เร็วที่สุดครับ " ;
         /*$arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "2";
         $arrayPostData['messages'][1]['stickerId'] = "34"; */
@@ -82,7 +83,7 @@ if(strpos($message,"ปรึกษา"))
   
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = " ข้อความ >:" . $message ;
+   $arrayPostData['messages'][0]['text'] = $arrayPostData['messages'][0]['type'] ." >:" . $message ;
    /*$arrayPostData['messages'][1]['type'] = "sticker";
    $arrayPostData['messages'][1]['packageId'] = "2";
    $arrayPostData['messages'][1]['stickerId'] = "34"; */
