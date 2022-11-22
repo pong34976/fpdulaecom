@@ -1,6 +1,6 @@
 <?php
 $type = "text";
-$message ="ดีครับ"; 
+$message ="ทดสอบ"; 
 $messages = $message;
  
 if(is_numeric(strrpos($message,"ดี")))
