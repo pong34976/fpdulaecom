@@ -78,10 +78,10 @@
         break;
         case 3:
           $arrayPostData['to'] = $idu;
-          // $arrayPostData['messages'][0]['type'] = "text";
-             $arrayPostData['messages'][0]['type'] = "sticker";
+          // ['events'][0]['message']['type']
+            $arrayPostData['messages'][0]['type'] = "sticker";
    $arrayPostData['messages'][0]['packageId'] = "3179";
-      $arrayPostData['messages'][0]['id'] = "17167223669110";
+ 
    $arrayPostData['messages'][0]['stickerId'] = "1317227";  
 $arrayPostData['messages'][0]['stickerResourceType'] = "STATIC"; 
 $arrayPostData['messages'][0]['keywords']  =  ["Hello","Happy","Fun"]; 
@@ -107,13 +107,11 @@ $arrayPostData['messages'][0]['keywords']  =  ["Hello","Happy","Fun"];
       break;
    }
 
-  //  $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
-  //  $arrayPostData['messages'][0]['type'] = "text";
-  //  $arrayPostData['messages'][0]['text'] = $content;
-  //  /*$arrayPostData['messages'][1]['type'] = "sticker";
-  //  $arrayPostData['messages'][1]['packageId'] = "3179";
-  //  $arrayPostData['messages'][1]['stickerId'] = "1317227"; */
-  //  pushMsg($arrayHeader,$arrayPostData);
+   $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
+   $arrayPostData['messages'][0]['type'] = "text";
+   $arrayPostData['messages'][0]['text'] =  "ข้อความ >:" + $message;
+   
+   pushMsg($arrayHeader,$arrayPostData);
  
 
    function pushMsg($arrayHeader,$arrayPostData){
