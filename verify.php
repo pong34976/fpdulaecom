@@ -27,18 +27,23 @@
   //     pushMsg($arrayHeader,$arrayPostData);
   //  }
   $messages = $message;
-if(strpos($message,"ดี"))
-{
-  $messages = 1;
-}
-if(strpos($message,"ถาม"))
-{
-  $messages = 2;
-}
-if($type=="sticker")
-{
-  $messages = 3;
-}
+
+  if(is_numeric(strrpos($message,"ดี")))
+  {
+    $messages = 1;
+  }
+  if(is_numeric(strrpos($message,"ถาม")))
+  {
+    $messages = 2;
+  }
+  if(is_numeric(strrpos($message,"ปรึกษา")))
+  {
+    $messages = 2;
+  }
+  if($type=="sticker")
+  {
+    $messages = 3;
+  }
  
  
    switch ($messages) {
@@ -67,7 +72,7 @@ if($type=="sticker")
       case 2:
         $arrayPostData['to'] = $idu;
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ถามมาได้เลยครับ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!!  ขอขอบคุณที่ติดต่อเรา ใส่ข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาได้เลยครับ  ";
+        $arrayPostData['messages'][0]['text'] = "สอบถามมาได้เลยครับ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!!  ขอขอบคุณที่ติดต่อเรา ใส่ข้อมูล ยี่ห้อ รุ่น อาการ/ความต้องการ ของเครื่องที่ต้องการคำปรึกษาได้เลยครับ  ";
         $arrayPostData['messages'][1]['type'] = "text";
         $arrayPostData['messages'][1]['text'] ="   ตัวอย่าง ยี่ห้อ HD รุ่น E2041 อาการ เปิดไม่ติด";
         pushMsg($arrayHeader,$arrayPostData);
@@ -100,13 +105,13 @@ if($type=="sticker")
       break;
    }
 
-   $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
-   $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = $content;
-   /*$arrayPostData['messages'][1]['type'] = "sticker";
-   $arrayPostData['messages'][1]['packageId'] = "3179";
-   $arrayPostData['messages'][1]['stickerId'] = "1317227"; */
-   pushMsg($arrayHeader,$arrayPostData);
+  //  $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
+  //  $arrayPostData['messages'][0]['type'] = "text";
+  //  $arrayPostData['messages'][0]['text'] = $content;
+  //  /*$arrayPostData['messages'][1]['type'] = "sticker";
+  //  $arrayPostData['messages'][1]['packageId'] = "3179";
+  //  $arrayPostData['messages'][1]['stickerId'] = "1317227"; */
+  //  pushMsg($arrayHeader,$arrayPostData);
  
 
    function pushMsg($arrayHeader,$arrayPostData){
