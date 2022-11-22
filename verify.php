@@ -109,7 +109,7 @@ $arrayPostData['messages'][0]['keywords']  =  ["Hello","Happy","Fun"];
 
    $arrayPostData['to'] = "U1cb2ab4f8755c78cdee903db3a79f548";
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] =  "ข้อความ >:" + $message;
+   $arrayPostData['messages'][0]['text'] =  "ข้อความ >:" . $message;
    
    pushMsg($arrayHeader,$arrayPostData);
  
