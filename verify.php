@@ -44,8 +44,6 @@
   {
     $messages = 3;
   }
- 
- 
    switch ($messages) {
     case 'test':
       $arrayPostData['to'] = $idu;
@@ -83,7 +81,11 @@
           // $arrayPostData['messages'][0]['type'] = "text";
              $arrayPostData['messages'][0]['type'] = "sticker";
    $arrayPostData['messages'][0]['packageId'] = "3179";
+      $arrayPostData['messages'][0]['id'] = "17167223669110";
    $arrayPostData['messages'][0]['stickerId'] = "1317227";  
+$arrayPostData['messages'][0]['stickerResourceType'] = "STATIC"; 
+$arrayPostData['messages'][0]['keywords']  =  ["Hello","Happy","Fun"]; 
+
    $arrayPostData['messages'][1]['type'] = "text";
           $arrayPostData['messages'][1]['text'] = "ผมระบบตอบโต้อัตโนมัติ ตอนนี้ผู้ดูแลไม่อยู่นะครับ!!! สงสัยอะไรตรงไหนไหมครับ??? ";
         
